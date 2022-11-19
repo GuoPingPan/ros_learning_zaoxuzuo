@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<launch deprecated="This launch file had out date!">
+
+    <node name="topic_test_client" pkg="topic_test" type="client.py" output="screen"/>
+    
+    <!-- rosparam 比 node 先执行-->
+    <rosparam command="load" file="$(find test_vs)/launch/params.yaml"/>
+    <rosparam command="dump" file="$(find test_vs)/launch/params_out.yaml"/>
+    
+    <arg name="abc" value="1"/>
+    
+    
+    <node name="topic_test_server" pkg="topic_test" type="server.py"  output="log" respawn="false" respawn_delay="0">
+        <param name="/fa" value=""/>
+        
+    
+    </node>
+    
+    
+
+    <!-- <include file="$(find ros_package_name)/">
+        <remap from="" to=""/>
+        <param name="" value=""/>
+        
+    </include> -->
+
+</launch>  

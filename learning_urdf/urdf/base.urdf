@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<robot name="robot_name">
+    
+    <link name="base_link1">
+        <visual>
+            <geometry>
+                <box size="0.5 2 1"/>
+                <!-- x y z length-->
+            </geometry>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <material name="blue">
+                <color rgba="0 0 1.0 0.5" />
+            </material>           
+        </visual>
+    </link>
+
+    <link name="base_link2">
+        <visual>
+            <geometry>
+                <cylinder radius="0.1" length="1"/>
+            </geometry>
+            <origin xyz="0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <material name="red">
+                <color rgba="1 0 0 0.5" />
+            </material>
+        </visual>
+    </link>
+
+    <joint name="joint_one" type="fixed">
+        <parent link="base_link1"/>
+        <child link="base_link2"/>
+        <origin xyz="0.0 0.0 2.0" rpy="0.0 0.0 0.0"/>
+    </joint>
+    
+
+
+    <link name="base_link3">
+        <visual>
+            <geometry>
+                <sphere radius="1"/>
+                <!-- x y z length-->
+            </geometry>
+            <origin xyz="5.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <material name="red">
+                <color rgba="1 0 0 0.5" />
+            </material>
+        </visual>
+    </link>
+
+    <joint name="joint_two" type="fixed">
+        <parent link="base_link1"/>
+        <child link="base_link3"/>
+        <origin xyz="4 0 0" rpy="0 0 0"/>
+    </joint>
+    
+
+</robot>

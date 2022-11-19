@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+
+    <!-- 这里就是直接调用了xacro解析成urdf -->
+    <param name="robot_description" command="$(find final_)/xacro $(find learning_urdf)/urdf/final_car.urdf"/>
+    
+    
+    <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" output="screen" />
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen" />
+    <node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="joint_state_publisher_gui" output="screen" />
+
+    <node name="rviz" pkg="rviz" type="rviz" output="screen"/>
+    
+    
+
+
+</launch>

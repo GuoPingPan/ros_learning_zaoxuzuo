@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<launch>
+
+    <param name="robot_description" command="$(find xacro)/xacro $(find robot_gazebo)/urdf/combine.xacro"/>
+    
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find robot_gazebo)/world/first.world" />
+    </include>
+    
+    <node name="model" pkg="gazebo_ros" type="spawn_model" args="-urdf -model mycar1 -param robot_description" output="screen"/>
+    
+    
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find robot_gazebo)/config/base.rviz" output="screen"/>
+    
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+    <include file="$(find learning_navigation)/launch/amcl.launch"/>
+    
+
+    <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="static_transform_publisher" args="0 0 0 -1.57 0 -1.57 /support /support_depth" /> -->
+
+    <arg name="map" default="map.yaml" />
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find learning_navigation)/map/$(arg map)"/>
+
+    
+
+
+
+
+</launch>

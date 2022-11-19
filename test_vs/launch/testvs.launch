@@ -1,0 +1,15 @@
+<launch>
+    <node name="test_vs1" pkg="test_vs" type="testvs" output="screen"/>
+    <node name="test_vs2" pkg="test_vs" type="testvs.py" output="screen"/>
+    <node name="test_vs3" pkg="test_vs" type="new.py" output="screen"/>
+    
+    <!--
+        node: 节点标识
+        pkg: 包名
+        type: 被运行的节点文件
+        name: 节点名字
+        output: 输出方式
+    -->
+
+
+</launch>

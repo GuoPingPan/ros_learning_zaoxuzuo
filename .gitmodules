@@ -1,0 +1,3 @@
+[submodule "arbotix_ros"]
+	path = arbotix_ros
+	url = ./arbotix_ros/

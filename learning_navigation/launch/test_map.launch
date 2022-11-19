@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="map" default="map.yaml" />
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find learning_navigation)/map/$(arg map)"/>
+
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find robot_gazebo)/config/base.rviz" output="screen"/>
+
+
+</launch>

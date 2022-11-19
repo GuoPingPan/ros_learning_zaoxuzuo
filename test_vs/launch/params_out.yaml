@@ -1,0 +1,3 @@
+roslaunch:
+  uris: {host_pgp_virtual_machine__45431: 'http://pgp-virtual-machine:45431/'}
+run_id: 4be58750-66f6-11ed-b1b0-000c29dfcf04

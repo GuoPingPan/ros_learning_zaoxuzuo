@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="map_name" default="map"/>
+
+    <arg name="path" value="$(find learning_navigation)/map/$(arg map_name)"/>
+    
+    <node name="map_save" pkg="map_server" type="map_saver" args="-f $(arg path)" output="screen"/>
+    
+
+</launch>
